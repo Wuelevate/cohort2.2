@@ -1,0 +1,70 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #67032c, #0c0124);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero .logo {
+    width: 120px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* About Section */
+#about {
+    padding: 60px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2em;
+    color: #222;
+}
+
+#about p {
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
