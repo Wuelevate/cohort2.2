@@ -1,6 +1,5 @@
-import { useState } from 'react'
 import './App.css'
-import StopWatch from './components/stopWatch'
+import StopWatch from './components/StopWatch'
 
 function App() {
 

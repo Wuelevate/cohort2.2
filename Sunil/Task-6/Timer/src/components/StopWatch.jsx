@@ -28,6 +28,7 @@ const StopWatch = ({ increment }) => {
         }
         setIsRunning(!isRunning);
     };
+    // console.log(intervalRef.current)
 
     const reset = () => {
         clearInterval(intervalRef.current);
@@ -42,6 +43,7 @@ const StopWatch = ({ increment }) => {
             }
         };
     }, []);
+
 
     return (
         <div className="container1">
