@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <!-- Task 5 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Task Manager</h1>
+
+        <!-- Task Input -->
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Enter task..." />
+            <select id="taskPriority">
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button id="addTask">➕ Add Task</button>
+        </div>
+
+        <!-- Filter Options -->
+        <div class="filter">
+            <label>Filter by Priority:</label>
+            <select id="filterTasks">
+                <option value="All">All</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList"></ul>
+
+        <!-- Task Count -->
+        <p id="taskCount">Total Tasks: 0</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
