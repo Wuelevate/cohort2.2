@@ -1,0 +1,78 @@
+
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 400px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the time display */
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Button container */
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Button styling */
+button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Reset button styling */
+.reset {
+    background-color: #f44336;
+    color: white;
+}
+
+.reset:disabled {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+}
+
+/* Start/Stop button styling */
+.start {
+    background-color: #4caf50;
+    color: white;
+}
+
+.stop {
+    background-color: #fbc02d;
+    color: white;
+}
+
+/* Hover effects for buttons */
+button:hover:not(:disabled) {
+    background-color: #555;
+    color: white;
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
