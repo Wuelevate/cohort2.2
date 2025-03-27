@@ -1,0 +1,41 @@
+*{
+padding: 0;
+margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(154, 162, 159);
+}
+
+.container{
+    background-color: rgb(142, 142, 172);
+    border: 5px solid rgb(141, 131, 216);
+    margin: 5px;
+    padding: 5px;
+}
+
+#joke-display strong{
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+}
+#joke-display {
+    margin: 20px;
+    padding: 10px;
+    color: wheat;
+    border: 1px solid #0a0101;
+    border-radius: 5px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}

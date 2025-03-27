@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --light: #ecf0f1;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: url('Background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .content {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .book-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .book-card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .book-card img {
+            width: 150px; /* Fixed width */
+            height: 200px; /* Fixed height */
+            object-fit: cover; /* Ensure the image covers the area */
+            border-radius: 10px;
+        }
+
+        .book-card h3 {
+            margin: 10px 0 5px;
+        }
+
+        .book-card p {
+            margin: 5px 0;
+            color: var(--primary);
+        }
+
+        .book-card button {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .book-card button:hover {
+            background: var(--primary);
+        }
+
+        .filter-section, .total-books-section {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>My Books Gallery</h2>
+        <div class="filter-section">
+            <h3>Filter Books by Author</h3>
+            <select id="author-filter">
+                <option value="all">All</option>
+                <option value="Shivaji Sawant">Shivaji Sawant</option>
+                <option value="Ranjit Desai">Ranjit Desai</option>
+                <option value="Medha Deshmukh Bhaskaran">Medha Deshmukh Bhaskaran</option>
+                <option value="Kamal Gokhale">Kamal Gokhale</option>
+            </select>
+        </div>
+
+        <div class="total-books-section">
+            <h3>Total Books: <span id="total-books"></span></h3>
+        </div>
+
+        <div class="book-gallery" id="book-gallery"></div>
+    </div>
+
+<script>
+const books = [
+    { id: 1, name: 'Shriman Yogi', author: 'Ranjit Desai', image: 'Shriman yogi.jpg', link: 'https://drive.google.com/file/d/1BVAjJKQ8mrGKPLO3qqh8ThNLV9g_i-4Z/view' },
+    { id: 2, name: 'Chava', author: 'Shivaji Sawant', image: 'Chava.jpg', link: 'https://drive.google.com/file/d/1QP63Xnmmel8GXChc1PmKu3R3c0_WZKVE/view?usp=drivesdk' },
+    { id: 3, name: 'Mrutyunjay', author: 'Shivaji Sawant', image: 'Mrutyunjay.jpg', link: 'https://drive.google.com/file/d/1OKikQEa567q_AmdupkREBoYBPsIQr2_-/view?usp=drivesdk' },
+    { id: 4, name: 'Life and Death of Sambhaji', author: 'Medha Deshmukh Bhaskaran', image: 'Life and Death of Sambhaji.jpg', link: 'https://drive.google.com/file/d/1iGa1faQCHmj3Z5w3mv8bjlHbvKSq3A8B/view?usp=drivesdk' },
+    { id: 5, name: 'Shivputra Sambhaji', author: 'Kamal Gokhale', image: 'Shivputra.jpg', link: 'https://drive.google.com/file/d/1SQVozq0d-lEVAMkDwl6rX2ZM3kYj6PZM/view?usp=drivesdk' }
+];
+
+// Using ES6+ features: let/const, arrow functions, destructuring
+const renderBook = ({ name, author, image, link }) => `
+    <div class="book-card">
+        <img src="${image}" alt="${name}">
+        <h3>${name}</h3>
+        <p>by ${author}</p>
+        <button onclick="readBook('${link}')">Read Book</button>
+    </div>
+`;
+
+// Using higher-order functions: map()
+const displayBooks = (books) => {
+    document.getElementById('book-gallery').innerHTML = books
+        .map(book => renderBook(book))
+        .join('');
+};
+
+const readBook = (link) => {
+    window.open(link, '_blank');
+};
+
+// Initial render
+displayBooks(books);
+
+// Example of using filter() and reduce()
+const updateTotalBooks = () => {
+    const totalBooks = books.reduce((total, book) => total + 1, 0);
+    document.getElementById('total-books').innerText = totalBooks;
+};
+
+const filterBooks = (author) => {
+    const filteredBooks = author === 'all' ? books : books.filter(book => book.author === author);
+    displayBooks(filteredBooks);
+};
+
+document.getElementById('author-filter').addEventListener('change', (event) => {
+    filterBooks(event.target.value);
+});
+
+// Initial total books count
+updateTotalBooks();
+</script>
+</body>
+</html>
