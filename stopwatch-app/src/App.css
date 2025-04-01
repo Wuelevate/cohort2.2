@@ -1,0 +1,63 @@
+.app {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+.stopwatch-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;
+}
+
+.time-display {
+  font-size: 48px;
+  font-family: monospace;
+  margin: 20px 0;
+  color: #2c3e50;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+button:nth-child(1) {
+  background-color: #4CAF50;
+  color: white;
+}
+
+button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+button:nth-child(3) {
+  background-color: #2196F3;
+  color: white;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
