@@ -1,0 +1,31 @@
+.card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    margin-top: 100px;
+}
+.card {
+    width: 100%;
+    max-width: 400px;
+    /* Adjust max width as needed */
+    padding: 30px;
+    padding-bottom: 5px;
+    /* Inner spacing */
+    box-shadow: 1 2px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a subtle shadow */
+}
+
+.card-box {
+    margin-bottom: 16px;
+    /* Spacing between TextField and Button */
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-actions button{
+    min-width:100px;
+}
